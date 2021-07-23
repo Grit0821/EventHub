@@ -6,7 +6,7 @@ class EventHub {
     this.cache[eventName] = this.cache[eventName] || [] // 初始化
     this.cache[eventName].push(fn) // 一个发布可以有多个事件
   }
-  emit(eventName, data?) {
+  emit(eventName, data) {
     this.cache[eventName] && this.cache[eventName].forEach(fn => {
       fn(data)
     });
